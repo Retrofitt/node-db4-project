@@ -1,0 +1,53 @@
+{ Table Wire Frame }
+
+
+'Recipes' Table
+    - recipe_id (Primary Key, Number)
+    - recipe_name (Unique, String)
+    - step_id  (Foreign Key)
+
+'Steps' Table
+    - step_id (Primary Key, Number)
+    - step_num (Number)
+    - instruction (String)
+    - step_ingredient_id (Foreign Key, Array of Objects)
+
+
+'StepIngredients' Table
+    - step_ingredient_id (Primary Key, Number)
+    - quantity (Number)
+    - step_id(Foreign Key, Number)
+    - ingredient_id (Foreign Key, Number)
+
+'Ingredients' Table
+    - ingredient_id (Primary Key, Number)
+    - ingredient_name (Unique, String)
+
+
+
+
+
+
+
+{
+    recipe_id:
+    recipe_name:
+    step_id: {
+        step_id:
+        step_num:
+        instruction:
+        step_ingredient_id: [
+            {
+                step_ingredient_id:
+                ingredient_name:
+                quantity:
+                ingredient_id: [
+                    {
+                        ingredient_id:
+                        ingredient_name:
+                    }
+                ]
+            }
+        ]
+    }
+}
